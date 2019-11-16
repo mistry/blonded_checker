@@ -5,10 +5,10 @@ import pickle
 from gmail_log import send_mail
 
 def main():
-    old = pickle.load(open("/FULLPATH/most_recent_page.p", "rb"))
+    old = pickle.load(open("FULLPATH/most_recent_page.p", "rb"))
     frank = 'https://www.blonded.co'
     recent = get_page(frank)
-    pickle.dump(recent,open("/FULLPATH/most_recent_page.p", "wb"))
+    pickle.dump(recent,open("FULLPATH/most_recent_page.p", "wb"))
 
     if old != recent:
         diff = [s for s in recent if s not in old]
